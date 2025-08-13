@@ -20,7 +20,6 @@ public class Questao4 {
             }
         }
 
-        // Lê coluna por coluna e monta string criptografada
         StringBuilder criptografada = new StringBuilder();
         for (int j = 0; j < colunas; j++) {
             for (int i = 0; i < linhas; i++) {
@@ -41,9 +40,5 @@ public class Questao4 {
 
         String criptografada = criptografa(mensagem);
         System.out.println("Mensagem criptografada: " + criptografada);
-
-        System.out.println("\nDigite a mensagem criptografada para descriptografar:");
-        String entradaCripto = s.nextLine();
-
     }
 }

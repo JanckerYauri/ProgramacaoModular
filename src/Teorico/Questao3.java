@@ -30,15 +30,14 @@ public class Questao3 {
         return nota;
     }
 
-    public static double avaliaTrabalho(Scanner s, double trabalhopratico) {
+    public static double avaliaTrabalho(Scanner s) {
         System.out.println("Digite a nota do trabalho prático. (max: 20 pts)");
-        trabalhopratico = s.nextDouble();
 
-        return trabalhopratico;
+        return s.nextDouble();
     }
 
-    public static void notaFinal(double notafinal) {
-        System.out.println("A nota final é: " + notafinal + " em 100 pontos");
+    public static void notaFinal(double notafinal, DecimalFormat df) {
+        System.out.println("A nota final é: " + df.format(notafinal) + " em 100 pontos");
     }
 
     public static void main(String[] args) {
@@ -47,13 +46,12 @@ public class Questao3 {
 
         double[] exercicios = new double[4];
         double[] provas = new double[2];
-        double trabalhopratico = 0;
         double notafinal = 0;
 
         notafinal += avaliaExercicios(s, exercicios);
         notafinal += avaliaProvas(s, provas);
-        notafinal += avaliaTrabalho(s, trabalhopratico);
-        notaFinal(notafinal);
+        notafinal += avaliaTrabalho(s);
+        notaFinal(notafinal, df);
 
     }
 }
