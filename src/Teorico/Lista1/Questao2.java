@@ -1,4 +1,4 @@
-package Teorico;
+package Teorico.Lista1;
 
 import java.util.Scanner;
 

@@ -1,10 +1,8 @@
-package Teorico;
+package Teorico.Lista1;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.Scanner;
 
-public class Questao7p1 {
+public class Questao4 {
     public static String criptografa(String mensagem) {
         int colunas = 5;
         int linhas = (int) Math.ceil((double) mensagem.length() / colunas);
@@ -35,19 +33,12 @@ public class Questao7p1 {
     }
 
     public static void main(String[] args) {
-        String caminhoArquivo = "entrada_q4.txt";
+        Scanner s = new Scanner(System.in);
 
-        try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
-            int repeticoes = Integer.parseInt(br.readLine());
+        System.out.println("Digite a mensagem que deseja criptografar:");
+        String mensagem = s.nextLine();
 
-            for (int i = 0; i < repeticoes; i++) {
-                String mensagem = br.readLine();
-                String criptografada = criptografa(mensagem);
-                System.out.println("Original: " + mensagem);
-                System.out.println("Criptografada: " + criptografada);
-            }
-        } catch (IOException e) {
-            System.out.println("Erro ao ler arquivo: " + e.getMessage());
-        }
+        String criptografada = criptografa(mensagem);
+        System.out.println("Mensagem criptografada: " + criptografada);
     }
 }
